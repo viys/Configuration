@@ -1,0 +1,307 @@
+\t (01:18:50) allegro 17.4 S032 Windows SPB 64-bit Edition
+\t (01:18:50)     Journal start - Tue Feb 21 20:08:47 2023
+\t (01:18:50)         Host=778B User=yugut Pid=22780 CPUs=12
+\t (01:18:50) CmdLine= D:\Cadence\SPB_17.4\tools\bin\allegro.exe
+\t (01:18:50) 
+\i (01:18:50) zoom out 1 
+\i (01:18:50) setwindow pcb
+\i (01:18:50) zoom out -0.4068 -6.8021
+\i (01:18:50) trapsize 727
+\i (01:18:54) label refdes 
+\t (01:18:54) Pick text location.
+\i (01:18:54) pick grid -1.6423 -3.3864
+\t (01:18:54) last pick:  -1.6510 -3.3782
+\t (01:18:54) Enter text string.
+\i (01:18:57) setwindow pcb
+\i (01:18:57) pick -1.6510 -3.3782
+\i (01:19:01) setwindow form.mini
+\i (01:19:01) FORM mini subclass SILKSCREEN_BOTTOM 
+\i (01:19:01) setwindow pcb
+\i (01:19:01) updateport CVPane
+\i (01:19:03) setwindow form.mini
+\i (01:19:03) FORM mini subclass SILKSCREEN_TOP 
+\i (01:19:03) setwindow pcb
+\i (01:19:03) updateport CVPane
+\i (01:19:04) setwindow form.mini
+\i (01:19:04) FORM mini subcolor color 17 
+\i (01:19:04) setwindow pcb
+\i (01:19:04) updateport CVPane
+\i (01:19:05) zoom out 1 
+\i (01:19:05) setwindow pcb
+\i (01:19:05) zoom out 1.9187 -3.5172
+\i (01:19:05) trapsize 1453
+\i (01:19:05) zoom out 1 
+\i (01:19:05) setwindow pcb
+\i (01:19:05) zoom out 7.0930 -3.5172
+\i (01:19:05) trapsize 2907
+\i (01:19:05) zoom in 1 
+\i (01:19:05) setwindow pcb
+\i (01:19:05) zoom in -2.0349 5.3488
+\i (01:19:05) trapsize 1453
+\i (01:19:06) zoom in 1 
+\i (01:19:06) setwindow pcb
+\i (01:19:06) zoom in -3.7791 2.8197
+\i (01:19:06) trapsize 727
+\i (01:19:06) pick grid -0.9593 0.9884
+\t (01:19:06) last pick:  -0.9652 0.9906
+\t (01:19:06) Enter text string.
+\i (01:19:09) setwindow pcb
+\i (01:19:09) pick -0.9652 0.9906
+\i (01:19:10) zoom out 1 
+\i (01:19:10) setwindow pcb
+\i (01:19:10) zoom out 0.9739 2.1076
+\i (01:19:10) trapsize 1453
+\i (01:19:10) zoom out 1 
+\i (01:19:10) setwindow pcb
+\i (01:19:10) zoom out 4.3895 0.2471
+\i (01:19:10) trapsize 2907
+\i (01:19:10) zoom in 1 
+\i (01:19:10) setwindow pcb
+\i (01:19:10) zoom in 9.0698 -3.7791
+\i (01:19:10) trapsize 1453
+\i (01:19:11) prepopup 4.9419 -2.7616
+\i (01:19:13) done 
+\i (01:19:13) generaledit 
+\i (01:19:14) zoom in 1 
+\i (01:19:14) setwindow pcb
+\i (01:19:14) zoom in -0.8430 -3.3430
+\i (01:19:14) trapsize 727
+\i (01:19:14) zoom in 1 
+\i (01:19:14) setwindow pcb
+\i (01:19:14) zoom in -0.8430 -3.3429
+\i (01:19:14) trapsize 363
+\i (01:19:14) zoom in 1 
+\i (01:19:14) setwindow pcb
+\i (01:19:14) zoom in -0.8430 -3.3429
+\i (01:19:14) trapsize 182
+\i (01:19:15) pick grid -0.8611 -3.2775
+\t (01:19:15) last pick:  -0.8636 -3.2766
+\i (01:19:15) zoom out 1 
+\i (01:19:15) setwindow pcb
+\i (01:19:15) zoom out -0.8611 -3.2775
+\i (01:19:15) trapsize 363
+\i (01:19:15) zoom out 1 
+\i (01:19:16) setwindow pcb
+\i (01:19:16) zoom out -0.8612 -3.2775
+\i (01:19:16) trapsize 727
+\i (01:19:16) pick grid -4.7129 -3.2629
+\t (01:19:16) last pick:  -4.7244 -3.2512
+\i (01:19:20) setwindow form.find
+\i (01:19:20) FORM find all_off  
+\i (01:19:22) FORM find lines YES 
+\i (01:19:23) setwindow pcb
+\i (01:19:23) drag_start grid -1.0792 -4.3821
+\i (01:19:23) drag_stop -1.6170 -2.4925
+\i (01:19:24) setwindow form.find
+\i (01:19:24) FORM find lines NO 
+\i (01:19:25) FORM find text YES 
+\i (01:19:26) setwindow pcb
+\i (01:19:26) drag_start grid -0.4687 -3.8443
+\i (01:19:26) drag_stop -2.1984 -2.1728
+\i (01:19:27) drag_start grid -1.3118 -3.2047
+\i (01:19:27) move 
+\t (01:19:27) last pick:  -1.6510 -3.3782
+\t (01:19:27) Pick new location for the element(s).
+\i (01:19:30) drag_stop grid -2.0966 -1.0972
+\i (01:19:30) generaledit 
+\i (01:19:36) zoom in 1 
+\i (01:19:36) setwindow pcb
+\i (01:19:36) zoom in 1.2173 -1.4751
+\i (01:19:36) trapsize 363
+\i (01:19:36) zoom in 1 
+\i (01:19:36) setwindow pcb
+\i (01:19:36) zoom in 1.2174 -1.4751
+\i (01:19:36) trapsize 182
+\i (01:19:36) zoom out 1 
+\i (01:19:36) setwindow pcb
+\i (01:19:36) zoom out 0.3344 -1.4678
+\i (01:19:36) trapsize 363
+\i (01:19:36) zoom out 1 
+\i (01:19:36) setwindow pcb
+\i (01:19:36) zoom out 0.3634 -1.4679
+\i (01:19:36) trapsize 727
+\i (01:19:37) pick grid 5.3489 -1.5696
+\t (01:19:37) last pick:  5.3594 -1.5748
+\i (01:19:37) zoom in 1 
+\i (01:19:37) setwindow pcb
+\i (01:19:37) zoom in -1.7296 -1.3370
+\i (01:19:37) trapsize 363
+\i (01:19:38) zoom out 1 
+\i (01:19:38) setwindow pcb
+\i (01:19:38) zoom out -1.7804 -1.4024
+\i (01:19:38) trapsize 727
+\i (01:19:42) label device 
+\t (01:19:42) Pick text location.
+\i (01:19:43) pick grid -2.1293 -2.7105
+\t (01:19:43) last pick:  -2.1336 -2.7178
+\t (01:19:43) Enter text string.
+\i (01:19:47) setwindow pcb
+\i (01:19:47) pick -2.1336 -2.7178
+\t (01:19:47) Enter text string.
+\i (01:19:49) prepopup 2.2166 -2.0128
+\i (01:19:49) done 
+\i (01:19:49) generaledit 
+\i (01:19:50) zoom out 1 
+\i (01:19:50) setwindow pcb
+\i (01:19:50) zoom out 1.6497 -2.1291
+\i (01:19:50) trapsize 1453
+\i (01:19:52) zoom in 1 
+\i (01:19:52) setwindow pcb
+\i (01:19:52) zoom in 3.4012 -5.0942
+\i (01:19:52) trapsize 727
+\i (01:19:53) pick grid 0.5523 -6.8819
+\t (01:19:53) last pick:  0.5588 -6.8834
+\i (01:19:54) pick grid 5.2762 -6.9691
+\t (01:19:54) last pick:  5.2832 -6.9596
+\i (01:19:54) pick grid 2.6018 -7.4342
+\t (01:19:54) last pick:  2.5908 -7.4422
+\i (01:19:55) setwindow form.find
+\i (01:19:55) FORM find all_on  
+\i (01:19:56) setwindow pcb
+\i (01:19:56) pick grid 2.2239 -7.4633
+\t (01:19:56) last pick:  2.2352 -7.4676
+\i (01:19:57) pick grid 1.9041 -7.6813
+\t (01:19:57) last pick:  1.9050 -7.6708
+\i (01:19:58) zoom in 1 
+\i (01:19:58) setwindow pcb
+\i (01:19:58) zoom in 2.4128 -7.6087
+\i (01:19:58) trapsize 363
+\i (01:19:58) zoom in 1 
+\i (01:19:58) setwindow pcb
+\i (01:19:58) zoom in 2.4201 -7.5941
+\i (01:19:58) trapsize 182
+\i (01:19:58) zoom in 1 
+\i (01:19:58) setwindow pcb
+\i (01:19:58) zoom in 2.4637 -7.5869
+\i (01:19:58) trapsize 91
+\i (01:19:59) pick grid 2.7199 -7.5632
+\t (01:19:59) last pick:  2.7178 -7.5692
+\i (01:20:05) package_height 
+\i (01:20:07) pick grid 2.7998 -7.5341
+\t (01:20:07) last pick:  2.7940 -7.5438
+\i (01:20:11) package_height 
+\i (01:20:11) pick grid 2.6781 -7.5578
+\t (01:20:11) last pick:  2.6670 -7.5692
+\i (01:20:12) zoom out 1 
+\i (01:20:12) setwindow pcb
+\i (01:20:12) zoom out 2.6799 -7.5578
+\i (01:20:12) trapsize 182
+\i (01:20:12) zoom out 1 
+\i (01:20:12) setwindow pcb
+\i (01:20:12) zoom out 2.8507 -7.4850
+\i (01:20:12) trapsize 363
+\i (01:20:13) zoom out 1 
+\i (01:20:13) setwindow pcb
+\i (01:20:13) zoom out 2.9816 -7.1653
+\i (01:20:13) trapsize 727
+\i (01:20:24) setwindow form.mini
+\i (01:20:24) FORM mini height_max 2.5 
+\i (01:20:25) setwindow pcb
+\i (01:20:25) pick grid 5.9322 -4.6796
+\t (01:20:25) last pick:  5.9436 -4.6736
+\i (01:20:26) save 
+\t (01:20:26) Symbol 'to-252.psm' created.
+\i (01:20:26) generaledit 
+\i (01:20:28) 3d 
+\i (01:20:29) QtSignal 3DUniFilterDialog UniFilterOkButton clicked
+\i (01:20:30) generaledit 
+\i (01:20:31) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 459 277 778 517 0 0 "-120"
+\i (01:20:33) QtSignal pcb3dViewer pcb3dViewer closed
+\i (01:20:34) 3d 
+\i (01:20:35) QtSignal 3DUniFilterDialog UniFilterOkButton clicked
+\i (01:20:35) generaledit 
+\i (01:20:36) QtSignal pcb3dViewer pcb3dViewerCanvas keyPressEvent 16777248 33554432 false 1
+\i (01:20:36) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasMousePressEvent 460 361 779 601 1 1 33554432 +
+\i (01:20:36) QtSignal "0.301341" "-0.118618" "-0.514343"
+\i (01:20:37) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasMouseReleaseEvent 388 267 707 507 1 0 +
+\i (01:20:37) QtSignal 33554432 "-0.242105" "-0.232975" "0.0111814"
+\i (01:20:37) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 422 225 741 465 0 0 "-120"
+\i (01:20:37) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 422 225 741 465 0 0 "-120"
+\i (01:20:37) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 603 190 922 430 0 0 120
+\i (01:20:37) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 778 145 1097 385 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 621 212 1015 469 0 0 "-120"
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 618 221 1012 478 0 0 "-120"
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 615 226 1009 483 0 0 "-120"
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 609 233 1003 490 0 0 "-120"
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 560 238 954 495 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 560 238 954 495 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 560 238 954 495 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 559 238 953 495 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 550 237 944 494 0 0 120
+\i (01:20:39) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 541 236 935 493 0 0 "-120"
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 540 236 934 493 0 0 "-120"
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 539 236 933 493 0 0 "-120"
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 538 236 932 493 0 0 "-120"
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 536 236 930 493 0 0 "-120"
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 585 224 979 481 0 0 120
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 606 224 1000 481 0 0 120
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 628 222 1022 479 0 0 120
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 659 216 1053 473 0 0 120
+\i (01:20:40) QtSignal pcb3dViewer pcb3dViewerCanvas CanvasWheelEvent 737 201 1131 458 0 0 120
+\i (01:20:43) QtSignal pcb3dViewer pcb3dViewer closed
+\i (01:20:43) pick grid 4.7403 -3.7058
+\t (01:20:43) last pick:  4.7498 -3.7084
+\i (01:20:44) zoom out 1 
+\i (01:20:44) setwindow pcb
+\i (01:20:44) zoom out 4.2025 -3.8075
+\i (01:20:44) trapsize 1454
+\i (01:20:44) zoom out 1 
+\i (01:20:44) setwindow pcb
+\i (01:20:44) zoom out 7.2395 -3.8366
+\i (01:20:44) trapsize 2907
+\i (01:20:45) zoom in 1 
+\i (01:20:45) setwindow pcb
+\i (01:20:45) zoom in -2.4419 -0.1744
+\i (01:20:45) trapsize 1453
+\i (01:20:46) zoom in 1 
+\i (01:20:46) setwindow pcb
+\i (01:20:46) zoom in -3.8663 -1.3663
+\i (01:20:46) trapsize 727
+\i (01:20:46) zoom out 1 
+\i (01:20:46) setwindow pcb
+\i (01:20:46) zoom out -2.8924 -1.1191
+\i (01:20:46) trapsize 1453
+\i (01:20:47) zoom in 1 
+\i (01:20:47) setwindow pcb
+\i (01:20:47) zoom in -0.2761 -0.3924
+\i (01:20:47) trapsize 727
+\i (01:20:47) zoom in 1 
+\i (01:20:47) setwindow pcb
+\i (01:20:47) zoom in -0.2325 -0.3488
+\i (01:20:47) trapsize 363
+\i (01:20:47) zoom out 1 
+\i (01:20:47) setwindow pcb
+\i (01:20:47) zoom out -0.0799 -0.2543
+\i (01:20:47) trapsize 727
+\i (01:20:47) zoom out 1 
+\i (01:20:47) setwindow pcb
+\i (01:20:47) zoom out -0.0798 -0.2542
+\i (01:20:47) trapsize 1453
+\i (01:20:48) zoom in 1 
+\i (01:20:48) setwindow pcb
+\i (01:20:48) zoom in 0.6178 -8.8007
+\i (01:20:48) trapsize 727
+\i (01:20:49) pick grid 0.7196 -8.6699
+\t (01:20:49) last pick:  0.7112 -8.6614
+\i (01:20:49) zoom out 1 
+\i (01:20:49) setwindow pcb
+\i (01:20:49) zoom out 1.5480 -8.1030
+\i (01:20:49) trapsize 1453
+\i (01:20:51) setwindow form.find
+\i (01:20:51) FORM find all_on  
+\i (01:20:52) setwindow pcb
+\i (01:20:52) pick grid 6.2500 1.3738
+\t (01:20:52) last pick:  6.2484 1.3716
+\i (01:21:01) 3d 
+\i (01:21:02) QtSignal 3DUniFilterDialog UniFilterOkButton clicked
+\i (01:21:03) generaledit 
+\i (01:25:30) QtSignal pcb3dViewer pcb3dViewerCanvas keyPressEvent 16777250 0 false 1
+\i (01:30:01) QtSignal pcb3dViewer pcb3dViewer closed
+\i (01:30:02) pick grid 6.9767 -4.7890
+\t (01:30:02) last pick:  6.9850 -4.8006
+\i (01:30:03) save 
+\i (01:30:04) fillin yes 
+\t (01:30:04) Symbol 'to-252.psm' created.
+\i (01:30:04) generaledit 
+\i (01:30:10) exit 
+\t (01:30:10)     Journal end - Tue Feb 21 20:20:07 2023

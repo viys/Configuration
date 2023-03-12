@@ -1,0 +1,655 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <url>http://www.keil.com/pack/</url>
+  <name>STM32F3xx_DFP</name>
+  <description>STMicroelectronics STM32F3 Series Device Support and Examples</description>
+
+  <releases>
+    <release version="1.0.1">
+      Updated: Device descriptions updated with features
+    </release>
+    <release version="1.0.0">
+      First Release version of STM32F3 Device Family Pack.
+    </release>
+  </releases>
+
+  <keywords>
+    <!-- keywords for indexing -->
+    <keyword>ST</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package STMicroelectronics</keyword>
+    <keyword>STM32F3</keyword>
+    <keyword>STM32</keyword>
+  </keywords>
+
+  <devices>
+    <!-- generated, do not modify this section! -->
+
+    <family Dfamily="STM32F3 Series" Dvendor="STMicroelectronics:13">
+      <processor Dcore="Cortex-M4" DcoreVersion="r0p1" Dfpu="1" Dmpu="1" Dendian="Little-endian"/>
+      <book    name="Documents\dui0553a_cortex_m4_dgug.pdf"           title="Cortex-M4 Generic User Guide"/>
+        <description>
+The STM32F3 family offers an extensive range of enhanced I/Os and peripherals connected to two APB buses.
+
+  - SRAM with HW parity checking
+  - Timer with quadrature (incremental) encoder input
+  - Timer with deadtime generation and emergency stop
+  - 5 V-tolerant I/Os
+  - Rail-to-rail analog comparators
+  - Operational amplifiers
+  - 96-bit unique ID
+        </description>
+
+        <feature type="WDT"           n="2"                           name="Watchdog"/>
+        <feature type="RTC"           n="32768"                       name="RTC"/>
+        <feature type="SPI"           n="3"       m="18000000"        name="SPI"/>
+        <feature type="I2C"           n="2"                           name="I2C"/>
+        <feature type="CAN"           n="1"                           name="CAN"/>
+        <feature type="Temp"          n="-40"     m="85"/>
+        <feature type="Temp"          n="-40"     m="105"/>
+
+
+      <!-- ************************  Subfamily 'STM32F302'  **************************** -->
+      <subFamily DsubFamily="STM32F302">
+        <feature type="Timer"         n="8"       m="16"/>
+        <feature type="Timer"         n="1"       m="32"/>
+        <feature type="DAC"           n="1"       m="12"/>
+        <feature type="USART"         n="5"       m="9000000"         name="USART"/>
+        <feature type="USBD"          n="1"                           name="USB Device"/>
+        <feature type="VCC"           n="2.00"    m="3.60"/>
+      
+      <!-- *************************  Device 'STM32F302CB'  ***************************** -->
+      <device Dname="STM32F302CB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="IOs"           n="37"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F302CC'  ***************************** -->
+      <device Dname="STM32F302CC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="IOs"           n="37"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F302RB'  ***************************** -->
+      <device Dname="STM32F302RB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F302RC'  ***************************** -->
+      <device Dname="STM32F302RC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F302VB'  ***************************** -->
+      <device Dname="STM32F302VB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="17"      m="12"/>
+        <feature type="IOs"           n="87"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F302VC'  ***************************** -->
+      <device Dname="STM32F302VC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="17"      m="12"/>
+        <feature type="IOs"           n="87"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F303'  **************************** -->
+      <subFamily DsubFamily="STM32F303">
+        <feature type="Timer"         n="9"       m="16"/>
+        <feature type="Timer"         n="1"       m="32"/>
+        <feature type="DAC"           n="2"       m="12"/>
+        <feature type="I2S"           n="2"                           name="I2S"/>
+        <feature type="USART"         n="5"       m="9000000"         name="USART"/>
+        <feature type="USBD"          n="1"                           name="USB Device"/>
+        <feature type="VCC"           n="2.00"    m="3.60"/>
+      
+      <!-- *************************  Device 'STM32F303CB'  ***************************** -->
+      <device Dname="STM32F303CB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xA000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="15"      m="12"/>
+        <feature type="IOs"           n="37"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F303CC'  ***************************** -->
+      <device Dname="STM32F303CC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="15"      m="12"/>
+        <feature type="IOs"           n="37"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F303RB'  ***************************** -->
+      <device Dname="STM32F303RB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xA000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="22"      m="12"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F303RC'  ***************************** -->
+      <device Dname="STM32F303RC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="22"      m="12"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F303VB'  ***************************** -->
+      <device Dname="STM32F303VB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xA000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="39"      m="12"/>
+        <feature type="IOs"           n="87"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F303VC'  ***************************** -->
+      <device Dname="STM32F303VC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F30x Series Reference Manual"/>
+        <book       name="Documents\STM32F302xB_xC_F303xB_xC.PDF"   title="STM32F30x Data Sheet"/>
+        <feature type="ADC"           n="39"      m="12"/>
+        <feature type="IOs"           n="87"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F313'  **************************** -->
+      <subFamily DsubFamily="STM32F313">
+        <feature type="Timer"         n="9"       m="16"/>
+        <feature type="Timer"         n="1"       m="32"/>
+        <feature type="DAC"           n="2"       m="12"/>
+        <feature type="I2S"           n="2"                           name="I2S"/>
+        <feature type="USART"         n="5"       m="9000000"         name="USART"/>
+        <feature type="VCC"           n="1.80"    m="3.60"/>
+      
+      <!-- *************************  Device 'STM32F313CC'  ***************************** -->
+      <device Dname="STM32F313CC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F31x Series Reference Manual"/>
+        <book       name="Documents\STM32F313xx.PDF"                title="STM32F31x Data Sheet"/>
+        <feature type="ADC"           n="15"      m="12"/>
+        <feature type="IOs"           n="36"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F313RC'  ***************************** -->
+      <device Dname="STM32F313RC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F31x Series Reference Manual"/>
+        <book       name="Documents\STM32F313xx.PDF"                title="STM32F31x Data Sheet"/>
+        <feature type="ADC"           n="22"      m="12"/>
+        <feature type="IOs"           n="51"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F313VC'  ***************************** -->
+      <device Dname="STM32F313VC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F30x.h"  define="STM32F30x"/>
+        <debug      svd="SVD\STM32F30x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0xC000"     init   ="0"   default="1"/>
+        <memory     id="IRAM2"                      start="0x10000000"  size="0x2000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F30x_32x_RM.PDF"           title="STM32F31x Series Reference Manual"/>
+        <book       name="Documents\STM32F313xx.PDF"                title="STM32F31x Data Sheet"/>
+        <feature type="ADC"           n="39"      m="12"/>
+        <feature type="IOs"           n="86"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F373'  **************************** -->
+      <subFamily DsubFamily="STM32F373">
+        <feature type="Timer"         n="9"       m="16"/>
+        <feature type="Timer"         n="2"       m="32"/>
+        <feature type="DAC"           n="3"       m="12"/>
+        <feature type="I2S"           n="3"                           name="I2S"/>
+        <feature type="USART"         n="3"       m="9000000"         name="USART"/>
+        <feature type="USBD"          n="1"                           name="USB Device"/>
+        <feature type="VCC"           n="2.00"    m="3.60"/>
+      
+      <!-- *************************  Device 'STM32F373C8'  ***************************** -->
+      <device Dname="STM32F373C8">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="36"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373CB'  ***************************** -->
+      <device Dname="STM32F373CB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="36"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373CC'  ***************************** -->
+      <device Dname="STM32F373CC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="36"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373R8'  ***************************** -->
+      <device Dname="STM32F373R8">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373RB'  ***************************** -->
+      <device Dname="STM32F373RB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373RC'  ***************************** -->
+      <device Dname="STM32F373RC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="8"       m="16"/>
+        <feature type="IOs"           n="52"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373V8'  ***************************** -->
+      <device Dname="STM32F373V8">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x10000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x4000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="21"      m="16"/>
+        <feature type="IOs"           n="84"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+        <feature type="BGA"           n="100"                         name="BGA"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373VB'  ***************************** -->
+      <device Dname="STM32F373VB">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x6000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="21"      m="16"/>
+        <feature type="IOs"           n="84"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+        <feature type="BGA"           n="100"                         name="BGA"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F373VC'  ***************************** -->
+      <device Dname="STM32F373VC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F37x Series Reference Manual"/>
+        <book       name="Documents\STM32F372xx_F373xx.PDF"         title="STM32F37x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="21"      m="16"/>
+        <feature type="IOs"           n="84"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+        <feature type="BGA"           n="100"                         name="BGA"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F383'  **************************** -->
+      <subFamily DsubFamily="STM32F383">
+        <feature type="Timer"         n="9"       m="16"/>
+        <feature type="Timer"         n="2"       m="32"/>
+        <feature type="DAC"           n="3"       m="12"/>
+        <feature type="I2S"           n="3"                           name="I2S"/>
+        <feature type="USART"         n="3"       m="9000000"         name="USART"/>
+        <feature type="VCC"           n="1.80"    m="3.60"/>
+      
+      <!-- *************************  Device 'STM32F383CC'  ***************************** -->
+      <device Dname="STM32F383CC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F38x Series Reference Manual"/>
+        <book       name="Documents\STM32F383xx.PDF"                title="STM32F38x Data Sheet"/>
+        <feature type="ADC"           n="9"       m="12"/>
+        <feature type="ADC"           n="7"       m="16"/>
+        <feature type="IOs"           n="35"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="48"                          name="QFP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F383RC'  ***************************** -->
+      <device Dname="STM32F383RC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F38x Series Reference Manual"/>
+        <book       name="Documents\STM32F383xx.PDF"                title="STM32F38x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="7"       m="16"/>
+        <feature type="IOs"           n="51"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="64"                          name="QFP"/>
+        <feature type="CSP"           n="66"                          name="CSP"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F383VC'  ***************************** -->
+      <device Dname="STM32F383VC">
+        <processor Dclock="72000000"/>
+        <compile header="Device\Include\STM32F37x.h"  define="STM32F37x"/>
+        <debug      svd="SVD\STM32F37x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x8000"     init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F3xx_256.FLM"  start="0x08000000"  size="0x40000"                  default="1"/>
+        <algorithm  name="Flash\STM32F3xx_OPT.FLM"  start="0x1FFFF800"  size="0x0010"                   default="0"/>
+        <book       name="Documents\STM32F37x_38x_RM.PDF"           title="STM32F38x Series Reference Manual"/>
+        <book       name="Documents\STM32F383xx.PDF"                title="STM32F38x Data Sheet"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="ADC"           n="20"      m="16"/>
+        <feature type="IOs"           n="83"                          name="Inputs/Outputs"/>
+        <feature type="QFP"           n="100"                         name="QFP"/>
+        <feature type="BGA"           n="100"                         name="BGA"/>
+      </device>
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <conditions>
+    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
+    <condition id="Compiler ARM">
+      <!-- conditions selecting ARM Compiler -->
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <condition id="STM32F30x">
+      <description>STMicroelectronics STM32F3 Series devices</description>
+      <accept Dname="STM32F30*"/>
+      <accept Dname="STM32F31*"/>
+    </condition>
+    <condition id="STM32F37x">
+      <description>STMicroelectronics STM32F31x Devices</description>
+      <accept Dname="STM32F37*"/>
+      <accept Dname="STM32F38*"/>
+    </condition>
+
+    <condition id="STM32F3xx CMSIS Device">
+      <!-- conditions selecting Devices -->
+      <description>STMicroelectronics STM32F3 Series devices and CMSIS-CORE</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F3????"/>
+    </condition>
+
+  </conditions>
+
+  <examples>
+    <example name="Blinky" doc="Abstract.txt" folder="Boards\ST\STM32F3-Discovery\Blinky">
+      <description>Blinky example</description>
+      <board name="STM32F3-Discovery" vendor="STMicroelectronics"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards\ST\STM32F3-Discovery\RTX_Blinky">
+      <description>CMSIS-RTOS based Blinky example</description>
+      <board name="STM32F3-Discovery" vendor="STMicroelectronics"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+  </examples>
+
+  <components>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="STM32F3xx CMSIS Device">
+      <!-- Cversion is necessary -->
+      <description>System Startup for STMicroelectronics STM32F3 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_DEVICE_STARTUP_STM32F3xx    /* Device Startup for STM32F3 */
+      </RTE_Components_h>
+
+      <files>
+        <!--  include folder -->
+        <file category="include" name="Device\Include\"/>
+
+        <!-- header files -->
+        <file category="header" condition="STM32F30x" name="Device\Include\stm32f30x.h"/>
+        <file category="header" condition="STM32F37x" name="Device\Include\stm32f37x.h"/>
+        
+        <!-- Flash Option Bytes templates -->
+        <file category="source" name="Device\Source\ARM\STM32F3xx_OPT.s"           attr="template"  select="Flash Option Bytes Template"/>
+
+        <!-- startup files -->
+        <file category="source" condition="STM32F30x" name="Device\Source\ARM\startup_stm32f30x.s" attr="config"/>
+        <file category="source" condition="STM32F37x" name="Device\Source\ARM\startup_stm32f37x.s" attr="config"/>
+
+        <!-- system file -->
+        <file category="source" condition="STM32F30x" name="Device\Source\system_stm32f30x.c" attr="config"/>
+        <file category="source" condition="STM32F37x" name="Device\Source\system_stm32f37x.c" attr="config"/>
+        
+      </files>
+    </component>
+    
+  </components>
+</package>

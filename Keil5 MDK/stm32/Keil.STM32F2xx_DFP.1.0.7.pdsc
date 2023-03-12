@@ -1,0 +1,1796 @@
+<?xml version="1.0" encoding="utf-8"?>
+
+<package schemaVersion="1.2" xmlns:xs="http://www.w3.org/2001/XMLSchema-instance" xs:noNamespaceSchemaLocation="PACK.xsd">
+  <vendor>Keil</vendor>
+  <name>STM32F2xx_DFP</name>                                                       <!-- name of package -->
+  <description>STMicroelectronics STM32F2 Series Device Support, Drivers and Examples</description>
+  <url>http://www.keil.com/pack</url>
+
+  <releases>
+    <release version="1.0.7" date="2014-04-29">
+      Updated I2C driver  (BUG Fix: 2 byte reception)
+      Device:StdPeriph Drivers:Framework Version:1.1.1 - added file misc.c
+    </release>
+    <release version="1.0.6">
+      Added STM Peripheral Library V1.1.0
+    </release>
+    <release version="1.0.5">
+      Updated I2c driver (corrected register access)
+      USB Device drivers update: multiple packet read, EP0 unconfiguration
+      Updated SPI driver (IRQ handling corrected)
+    </release>
+    <release version="1.0.4">
+      Updated drivers (namespace prefix ARM_ added)
+    </release>
+    <release version="1.0.3">
+      Added STM32F200 Board Support Bundle
+    </release>
+    <release version="1.0.2">
+      Added emWin Example and GUIDemo for MCBSTM32F200
+      Added emWin LCD driver for MCBSTM32F200
+      Updated USBH Drivers (improved robustness)
+    </release>
+    <release version="1.0.1">
+      Generic Drivers moved to "Drivers" Class
+      Added UART and I2C Driver
+      Updated USBD and USBH Drivers
+      Added MCBSTM32F200 Demo example
+      Added MCBSTM32F200 USB Host Keyboard example
+      Added MCBSTM32F200 BSP Drivers: Joystick, Touchscreen, Accelerometer, Gyroscope, Camera
+      Updated MCBSTM32F200 BSP Driver: Keyboard
+      Updated all MCBSTM32F200 examples
+      Minor corrections:
+      - SPI Driver
+      - DMA Driver
+      - MCI Driver
+    </release>
+    <release version="1.0.0">
+      First Release version of STM32F2 Device Family Pack.
+    </release>
+    <release version="0.9.0">
+      Beta version of STM32F2 Device Family Pack.
+    </release>
+  </releases>
+
+  <keywords>                                                                  <!-- keywords for indexing -->
+    <keyword>ST</keyword>
+    <keyword>Device Support</keyword>
+    <keyword>Device Family Package STMicroelectronics</keyword>
+    <keyword>STM32F2</keyword>
+    <keyword>STM32F2xx</keyword>
+  </keywords>
+
+  <devices>
+    <!-- generated, do not modify this section! -->
+
+    <family Dfamily="STM32F2 Series" Dvendor="STMicroelectronics:13">
+      <processor Dcore="Cortex-M3" DcoreVersion="r2p1" Dfpu="0" Dmpu="1" Dendian="Little-endian"/>
+      <book    name="Documents\dui0552a_cortex_m3_dgug.pdf"           title="Cortex-M3 Generic User Guide"/>
+        <description>
+The STM32F20x family incorporates high-speed embedded memories and an extensive range of enhanced I/Os and peripherals connected to two APB buses, three AHB buses and a 32-bit multi-AHB bus matrix.
+Typical applications include Motor drive and application control Medical equipment, Industrial applications: PLC, inverters, circuit breakers, Printers and scanners, Alarm systems, video intercom, and HVAC, Home audio appliances
+
+  - Adaptive real-time memory accelerator (ART)
+  - LCD parallel interface, 8080/6800 modes
+  - Multi-layer bus matrix
+  - 5 V-tolerant I/Os
+  - Timer with quadrature (incremental) encoder input
+  - Parallel camera interface
+  - Analog true random number generator
+  - 96-bit unique ID
+        </description>
+
+        <feature type="Timer"         n="12"      m="16"/>
+        <feature type="Timer"         n="2"       m="32"/>
+        <feature type="WDT"           n="2"/>
+        <feature type="RTC"           n="32768"/>
+        <feature type="DAC"           n="2"       m="12"/>
+        <feature type="SPI"           n="3"       m="30000000"/>
+        <feature type="I2S"           n="2"/>
+        <feature type="USART"         n="4"       m="7500000"/>
+        <feature type="UART"          n="2"       m="7500000"/>
+        <feature type="USBOTG"        n="1"                           name="USB OTG Full Speed"/>
+        <feature type="USBOTG"        n="1"                           name="USB OTG High Speed"/>
+        <feature type="CAN"           n="2"/>
+        <feature type="SDIO"          n="1"                           name="Secure Digital IO"/>
+        <feature type="RNG"           n="1"/>
+        <feature type="VCC"           n="1.80"    m="3.60"/>
+        <feature type="Temp"          n="-40"     m="85"/>
+        <feature type="Temp"          n="-40"     m="105"/>
+
+
+      <!-- ************************  Subfamily 'STM32F205'  **************************** -->
+      <subFamily DsubFamily="STM32F205">
+        <feature type="I2C"           n="3"/>
+      
+      <!-- *************************  Device 'STM32F205RB'  ***************************** -->
+      <device Dname="STM32F205RB">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x10000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205RC'  ***************************** -->
+      <device Dname="STM32F205RC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x18000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205RE'  ***************************** -->
+      <device Dname="STM32F205RE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+        <feature type="CSP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205RF'  ***************************** -->
+      <device Dname="STM32F205RF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205RG'  ***************************** -->
+      <device Dname="STM32F205RG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+        <feature type="CSP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205VB'  ***************************** -->
+      <device Dname="STM32F205VB">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x20000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x10000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205VC'  ***************************** -->
+      <device Dname="STM32F205VC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x18000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205VE'  ***************************** -->
+      <device Dname="STM32F205VE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205VF'  ***************************** -->
+      <device Dname="STM32F205VF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205VG'  ***************************** -->
+      <device Dname="STM32F205VG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205ZC'  ***************************** -->
+      <device Dname="STM32F205ZC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x18000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205ZE'  ***************************** -->
+      <device Dname="STM32F205ZE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205ZF'  ***************************** -->
+      <device Dname="STM32F205ZF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F205ZG'  ***************************** -->
+      <device Dname="STM32F205ZG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F207'  **************************** -->
+      <subFamily DsubFamily="STM32F207">
+        <feature type="I2C"           n="2"/>
+        <feature type="ETH"           n="1"       m="100000000"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="Camera"        n="14"/>
+      
+      <!-- *************************  Device 'STM32F207IC'  ***************************** -->
+      <device Dname="STM32F207IC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207IE'  ***************************** -->
+      <device Dname="STM32F207IE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207IF'  ***************************** -->
+      <device Dname="STM32F207IF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207IG'  ***************************** -->
+      <device Dname="STM32F207IG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207VC'  ***************************** -->
+      <device Dname="STM32F207VC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207VE'  ***************************** -->
+      <device Dname="STM32F207VE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207VF'  ***************************** -->
+      <device Dname="STM32F207VF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207VG'  ***************************** -->
+      <device Dname="STM32F207VG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207ZC'  ***************************** -->
+      <device Dname="STM32F207ZC">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x40000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207ZE'  ***************************** -->
+      <device Dname="STM32F207ZE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207ZF'  ***************************** -->
+      <device Dname="STM32F207ZF">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0xC0000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F207ZG'  ***************************** -->
+      <device Dname="STM32F207ZG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F20x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F20x_DS.PDF"                title="STM32F20x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F215'  **************************** -->
+      <subFamily DsubFamily="STM32F215">
+        <feature type="I2C"           n="3"/>
+        <feature type="Crypto"        n="1"                   name="Hardware acceleration for AES 128, 192, 256, Triple DES, HASH (MD5, SHA-1)"/>
+      
+      <!-- *************************  Device 'STM32F215RE'  ***************************** -->
+      <device Dname="STM32F215RE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F215RG'  ***************************** -->
+      <device Dname="STM32F215RG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="51"/>
+        <feature type="QFP"           n="64"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F215VE'  ***************************** -->
+      <device Dname="STM32F215VE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F215VG'  ***************************** -->
+      <device Dname="STM32F215VG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F215ZE'  ***************************** -->
+      <device Dname="STM32F215ZE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F215ZG'  ***************************** -->
+      <device Dname="STM32F215ZG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      </subFamily>
+
+      <!-- ************************  Subfamily 'STM32F217'  **************************** -->
+      <subFamily DsubFamily="STM32F217">
+        <feature type="I2C"           n="3"/>
+        <feature type="ETH"           n="1"       m="100000000"/>
+        <feature type="Crypto"        n="1"                   name="Hardware acceleration for AES 128, 192, 256, Triple DES, HASH (MD5, SHA-1)"/>
+        <feature type="ExtBus"        n="16"/>
+        <feature type="Camera"        n="14"/>
+      
+      <!-- *************************  Device 'STM32F217IE'  ***************************** -->
+      <device Dname="STM32F217IE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F217IG'  ***************************** -->
+      <device Dname="STM32F217IG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="140"/>
+        <feature type="QFP"           n="176"/>
+        <feature type="BGA"           n="176"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F217VE'  ***************************** -->
+      <device Dname="STM32F217VE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F217VG'  ***************************** -->
+      <device Dname="STM32F217VG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="16"      m="12"/>
+        <feature type="IOs"           n="82"/>
+        <feature type="QFP"           n="100"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F217ZE'  ***************************** -->
+      <device Dname="STM32F217ZE">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x80000"    startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      
+      <!-- *************************  Device 'STM32F217ZG'  ***************************** -->
+      <device Dname="STM32F217ZG">
+        <processor Dclock="120000000"/>
+        <compile header="Device\Include\STM32F2xx.h"  define="STM32F2XX"/>
+        <debug      svd="SVD\STM32F21x.svd"/>
+        <memory     id="IROM1"                      start="0x08000000"  size="0x100000"   startup="1"   default="1"/>
+        <memory     id="IRAM1"                      start="0x20000000"  size="0x20000"    init   ="0"   default="1"/>
+        <algorithm  name="Flash\STM32F2xx_1024.FLM" start="0x08000000"  size="0x100000"                 default="1"/>
+        <algorithm  name="Flash\STM32F2xx_OPT.FLM"  start="0x1FFFC000"  size="0x4000"                   default="0"/>
+        <algorithm  name="Flash\STM32F2xx_OTP.FLM"  start="0x1FFF7800"  size="0x0210"                   default="0"/>
+        <book       name="Documents\STM32F2_RM.PDF"                  title="STM32F2 Series Reference Manual"/>
+        <book       name="Documents\STM32F21x_DS.PDF"                title="STM32F21x Data Sheet"/>
+        <book       name="Documents\mcbSTM32F200.chm"                title="MCBSTM32F200 User's Guide"/>
+        <book       name="http://www.st.com/st-web-ui/static/active/en/resource/technical/document/data_brief/DM00022971.pdf"   title="STM3220G-EVAL"/>
+        <feature type="ADC"           n="24"      m="12"/>
+        <feature type="IOs"           n="114"/>
+        <feature type="QFP"           n="144"/>
+      </device>
+      </subFamily>
+
+    </family>
+  </devices>
+
+  <boards>
+    <board vendor="Keil" name="MCBSTM32F200" revision="Ver 1.1" salesContact="sales.intl@keil.com" orderForm="http://www.keil.com/product/prices.asp?MCBSTM32F200=ON">
+      <description>Keil MCBSTM32F200 Development Board</description>
+      <image small="Images\mcbstm32f200_board_small.jpg" large="Images\mcbstm32f200_board_large.jpg"/>
+      <book category="overview"  name="http://www.keil.com/mcbstm32f200/" title="MCBSTM32F200 Evaluation Board Web Page"/>
+      <book category="schematic" name="Documents\mcbstm32f200-schematics.pdf" title="Schematics"/>
+      <book category="manual"    name="Documents\mcbstm32f200.chm" title="User Manual"/>
+      <mountedDevice    deviceIndex="0" Dvendor="STMicroelectronics:13" Dname="STM32F207IG"/>
+      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F207"/>
+      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F217"/>
+      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F205"/>
+      <compatibleDevice deviceIndex="0" Dvendor="STMicroelectronics:13" DsubFamily="STM32F215"/>
+      <feature type="XTAL"            n="8000000"/>
+      <feature type="PWR"             n="5"              name="USB Powered"/>
+      <feature type="PWR"             n="8"  m="12"      name="Power jack with Voltage Regulator capable to supply both USB host interfaces"/>
+      <feature type="RAM"             n="1"              name="2 MByte SRAM"/>
+      <feature type="ROM"             n="1"              name="8 MByte NOR Flash"/>
+      <feature type="ROM"             n="1"              name="512 MByte NAND Flash"/>
+      <feature type="ROM"             n="1"              name="8 kByte I2C EEPROM"/>
+      <feature type="USB"             n="1"              name="USB 2.0 Full Speed, Host/Device, OTG"/>
+      <feature type="USB"             n="1"              name="USB 2.0 High Speed, Host/Device, OTG"/>
+      <feature type="CAN"             n="1"/>
+      <feature type="RS232"           n="1"/>
+      <feature type="ETH"             n="1"              name="10/100 Ethernet Port"/>
+      <feature type="GLCD"            n="1"  m="240.320" name="2.4 inch Color QVGA TFT LCD with resistive touchscreen"/>
+      <feature type="Gyro"            n="1"              name="3-axis digital output gyroscope"/>
+      <feature type="Joystick"        n="1"              name="5-position Joystick"/>
+      <feature type="Accelerometer"   n="1"              name="3-axis digital Accelerometer"/>
+      <feature type="Poti"            n="1"              name="Analog Voltage Control for ADC Input (potentiometer)"/>
+      <feature type="LineIn"          n="2"              name="Audio CODEC with Line-In/Out and Speaker/Microphone"/>
+      <feature type="LineOut"         n="2"              name="Audio CODEC with Line-In/Out and Speaker/Microphone"/>
+      <feature type="Other"           n="1"              name="Digital Microphone"/>
+      <feature type="Camera"          n="1"              name="Digital VGA Camera"/>
+      <feature type="Button"          n="4"              name="Push-Buttons for Reset, Wakeup, Tamper and User"/>
+      <feature type="LED"             n="8"              name="LEDs directly connected to port pins"/>      
+      <debugInterface adapter="JTAG/SW" connector="20 pin JTAG (0.1 inch connector)"/>
+      <debugInterface adapter="JTAG/SW" connector="10 pin Cortex debug (0.05 inch connector)"/>
+      <debugInterface adapter="JTAG/SW" connector="20-pin Cortex debug + ETM Trace (0.05 inch connector)"/>
+    </board>
+  </boards>
+
+  <conditions>
+    <!-- conditions are dependecy rules that can apply to a component or an individual file -->
+    <condition id="Compiler ARM">
+      <!-- conditions selecting ARM Compiler -->
+      <require Tcompiler="ARMCC"/>
+    </condition>
+
+    <condition id="STM32F20x">
+      <description>STMicroelectronics STM32F2 Series devices</description>
+      <require Dname="STM32F20[57]??"/>
+    </condition>
+    <condition id="STM32F21x">
+      <description>STMicroelectronics STM32F21x Devices</description>
+      <require Dname="STM32F21[57]??"/>
+    </condition>
+
+    <condition id="STM32F2xx CMSIS Device">
+      <!-- conditions selecting Devices -->
+      <description>STMicroelectronics STM32F2 Series devices and CMSIS-CORE</description>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+    </condition>
+
+    <condition id="STM32F2 STDPERIPH">
+      <description>STMicroelectronics STM32F2 Standard Peripherals Drivers requirements</description>
+      <require condition="STM32F2xx CMSIS Device"/>
+      <require Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework"/>
+    </condition>
+
+    <condition id="STM32F2 STDPERIPH RCC">
+      <description>STMicroelectronics STM32F2 Standard Peripherals Drivers with RCC</description>
+      <require condition="STM32F2 STDPERIPH"/>
+      <require Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC"/>
+    </condition>
+
+    <condition id="STM32F21x STDPERIPH RCC">
+      <description>STMicroelectronics STM32F2 Standard Peripherals Drivers with RCC</description>
+      <require condition="STM32F21x"/>
+      <require Cclass="CMSIS" Cgroup="CORE"/>
+      <require Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework"/>
+      <require Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC"/>
+    </condition>
+
+    <condition id="STM32F2xx CMSIS GPIO">
+      <description>STMicroelectronics STM32F2 Series GPIO Driver with CMSIS</description>
+      <require Cclass ="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+      <require Cclass ="Device" Cgroup="GPIO" />
+    </condition>
+
+    <condition id="STM32F2xx CMSIS GPIO DMA">
+      <description>STMicroelectronics STM32F2 Series GPIO and DMA Driver with CMSIS-CORE</description>
+      <require Cclass ="CMSIS" Cgroup="CORE"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+      <require Cclass ="Device" Cgroup="GPIO" />
+      <require Cclass ="Device" Cgroup="DMA" />
+    </condition>
+
+    <condition id="STM32F2xx CMSIS RTOS GPIO">
+      <description>STMicroelectronics STM32F2 Series GPIO Driver with CMSIS and RTOS</description>
+      <require Cclass ="CMSIS" Cgroup="CORE"/>
+      <require Cclass ="CMSIS" Cgroup="RTOS"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+      <require Cclass ="Device" Cgroup="GPIO" />
+    </condition>
+
+    <condition id="STM32F2xx CMSIS RTOS GPIO DMA">
+      <description>STMicroelectronics STM32F2 Series GPIO and DMA Driver with CMSIS and RTOS</description>
+      <require Cclass ="CMSIS" Cgroup="CORE"/>
+      <require Cclass ="CMSIS" Cgroup="RTOS"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+      <require Cclass ="Device" Cgroup="GPIO" />
+      <require Cclass ="Device" Cgroup="DMA" />
+    </condition>
+
+    <condition id="STM32F2xx CMSIS RTOS I2C">
+      <description>STMicroelectronics STM32F2 Series I2C Driver with CMSIS and RTOS</description>
+      <require Cclass ="CMSIS" Cgroup="CORE"/>
+      <require Cclass ="CMSIS" Cgroup="RTOS"/>
+      <require Dvendor="STMicroelectronics:13" Dname="STM32F2????"/>
+      <require Cclass ="Drivers" Cgroup="I2C" />
+    </condition>
+  </conditions>
+  
+  <examples>
+    <!-- MCBSTM32F200 Development Board -->
+    <example name="Blinky" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Blinky">
+      <description>Blinky example</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+    
+    <example name="CMSIS-RTOS Blinky" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\RTX_Blinky">
+      <description>CMSIS-RTOS based Blinky example</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Blinky.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <component Cclass="CMSIS" Cgroup="RTOS"/>
+        <category>Getting Started</category>
+        <category>CMSIS-RTX</category>
+      </attributes>
+    </example>
+
+    <example name="Demo" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Demo">
+      <description>Demo example</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Demo.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="CMSIS" Cgroup="CORE"/>
+        <component Cclass="Device" Cgroup="Startup"/>
+        <category>Getting Started</category>
+      </attributes>
+    </example>
+
+    <example name="emWin Example" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\emWin\Example">
+      <description>emWin Graphics simple example</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Example.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Graphics" Cgroup="CORE"/>
+        <category>Middleware</category>
+        <category>Graphics</category>
+        <keyword>emWin</keyword>
+      </attributes>
+    </example>
+
+    <example name="emWin GUI Demo" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\emWin\GUIDemo">
+      <description>emWin Graphics Demo example</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="GUIDemo.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Graphics" Cgroup="CORE"/>
+        <category>Middleware</category>
+        <category>Graphics</category>
+        <keyword>emWin</keyword>
+      </attributes>
+    </example>
+
+    <example name="USB Device HID" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\USB\Device\HID" version="1.0.1">
+      <description>USB Human Interface Device providing access from PC to board LEDs and push buttons</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="HID.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="USB" Cgroup="Device" Csub="HID"/>
+        <category>Middleware</category>
+        <category>USB Device</category>
+        <keyword>HID</keyword>
+      </attributes>
+    </example>
+
+    <example name="USB Device Mass Storage" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\USB\Device\MassStorage" version="1.0.1">
+      <description>USB Mass Storage Device using SD/MMC Memory Card or RAM as storage media</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="MassStorage.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="USB" Cgroup="Device" Csub="MSC"/>
+        <category>Middleware</category>
+        <category>USB Device</category>
+        <keyword>Memory Disk</keyword>
+      </attributes>
+    </example>
+
+    <example name="USB Device Virtual COM" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\USB\Device\VirtualCOM" version="1.0.1">
+      <description>Bridge between PC USB Virtual COM Port and UART port</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="VirtualCOM.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="USB" Cgroup="Device" Csub="CDC"/>
+        <category>Middleware</category>
+        <category>USB Device</category>
+        <keyword>Virtual COM</keyword>
+      </attributes>
+    </example>
+
+    <example name="USB Host Mass Storage" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\USB\Host\MassStorage" version="1.0.1">
+      <description>USB Host file manipulation example: create, read, copy, delete files from USB Mass Storage Device and format storage device</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="MassStorage.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="USB" Cgroup="Host" Csub="MSC"/>
+        <category>Middleware</category>
+        <category>USB Host</category>
+        <keyword>Mass Storage</keyword>
+      </attributes>
+    </example>
+
+    <example name="USB Host Keyboard" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\USB\Host\Keyboard" version="1.0.1">
+      <description>Measure example using USB HID Keyboard as input device</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Keyboard.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="USB" Cgroup="Host" Csub="HID"/>
+        <category>Middleware</category>
+        <category>USB Host</category>
+        <keyword>Keyboard</keyword>
+      </attributes>
+    </example>
+
+    <example name="File System Demo" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\FileSystem\File_Demo" version="1.0.1">
+      <description>File manipulation example: create, read, copy, delete files on any enabled drive (SD/MMC Card, NOR/NAND Flash, RAM) and format each drive</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="File_Demo.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="File System" Cgroup="Drive"/>
+        <category>Middleware</category>
+        <category>File System</category>
+        <keyword>SD/MMC Card</keyword>
+      </attributes>
+    </example>
+
+    <example name="BSD Client" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\BSD_Client" version="1.0.1">
+      <description>Example using BSD sockets to send commands to remote server</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="BSD_Client.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Socket" Csub="BSD"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>BSD</keyword>
+      </attributes>
+    </example>
+
+    <example name="BSD Server" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\BSD_Server" version="1.0.1">
+      <description>Example using BSD sockets to accept commands from remote clients</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="BSD_Server.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Socket" Csub="BSD"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>BSD</keyword>
+      </attributes>
+    </example>
+
+    <example name="FTP Server" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\FTP_Server" version="1.0.1">
+      <description>File Server using FTP protocol with SD/MMC Memory Card as storage media</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="FTP_Server.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Service" Csub="FTP Server"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>FTP</keyword>
+      </attributes>
+    </example>
+
+    <example name="HTTP Server" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\HTTP_Server" version="1.0.1">
+      <description>Compact Web Server with CGI interface</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="HTTP_Server.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Service" Csub="Web Server Compact"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>Web Server</keyword>
+        <keyword>HTTP</keyword>
+      </attributes>
+    </example>
+
+    <example name="SMTP Client" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\SMTP_Client" version="1.0.1">
+      <description>Example showing how to compose and send emails</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="SMTP_Client.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Service" Csub="SMTP Client"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>SMTP</keyword>
+      </attributes>
+    </example>
+
+    <example name="SNMP Agent" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\SNMP_Agent" version="1.0.1">
+      <description>Example showing how to use a Simple Network Management Protocol (SNMP)</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="SNMP_Agent.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Service" Csub="SNMP Agent"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>SNMP</keyword>
+      </attributes>
+    </example>
+
+    <example name="Telnet Server" doc="Abstract.txt" folder="Boards\Keil\MCBSTM32F200\Middleware\Network\Telnet_Server" version="1.0.1">
+      <description>Command-line Host service example using Telnet protocol</description>
+      <board name="MCBSTM32F200" vendor="Keil"/>
+      <project>
+        <environment name="uv" load="Telnet_Server.uvprojx"/>
+      </project>
+      <attributes>
+        <component Cclass="Network" Cgroup="Service" Csub="Telnet Server"/>
+        <category>Middleware</category>
+        <category>Network</category>
+        <keyword>Telnet</keyword>
+      </attributes>
+    </example>
+  </examples>
+
+  <components>
+    <component Cclass="Device" Cgroup="Startup" Cversion="1.0.0" condition="STM32F2xx CMSIS Device">  <!-- Cversion is necessary -->
+      <description>System Startup for STMicroelectronics STM32F2 Series</description>
+      <RTE_Components_h>
+        <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_DEVICE_STARTUP_STM32F2xx    /* Device Startup for STM32F2 */
+      </RTE_Components_h>
+
+      <files>
+        <!--  include folder -->
+        <file category="include" name="Device\Include\"/>
+
+        <!-- Flash Option Bytes templates -->
+        <file category="source" name="Device\Source\ARM\STM32F2xx_OPT.s"       attr="template"  select="Flash Option Bytes Template"/>
+        <file category="source" name="Device\Source\ARM\STM32F2xx_OTP.s"       attr="template"  select="Flash One-Time programmable Template"/>
+        
+        <file category="header" name="Device\Include\stm32f2xx.h"/>
+        <!-- startup files -->
+        <file category="source" name="Device\Source\ARM\startup_stm32f2xx.s" attr="config"/>
+        <!-- system file -->
+        <file category="source" name="Device\Source\system_stm32f2xx.c" attr="config"/>
+        <!-- device configuration required by drivers at the moment -->
+        <file category="header" name="RTE_Driver\Config\RTE_Device.h" attr="config"/>
+      </files>
+    </component>
+
+    <!-- START: STMicroelectronics Standard Peripherals Drivers -->
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Framework" Cversion="1.1.1" condition="STM32F2 STDPERIPH">
+      <description>Standard Peripherals Drivers Framework</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_FRAMEWORK
+      </RTE_Components_h>
+      <files>
+        <file category="doc"     name="Device\StdPeriph_Driver\stm32f2xx_stdperiph_lib_um.chm"/>
+        <file category="include" name="Device\StdPeriph_Driver\inc\"/>
+        <file category="source"  name="Device\StdPeriph_Driver\src\misc.c"/>
+        <file category="source"  name="Device\StdPeriph_Driver\templates\stm32f2xx_conf.h" attr="config" version="1.1.0"/>
+        <file category="include" name="Device\StdPeriph_Driver\templates\stm32f2xx_it.h"   attr="template" select="Interrupt Service Routines"/>
+        <file category="source"  name="Device\StdPeriph_Driver\templates\stm32f2xx_it.c"   attr="template" select="Interrupt Service Routines"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="ADC" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Analog-to-digital converter (ADC) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_ADC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_adc.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_adc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CAN" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Controller area network (CAN) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_CAN
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_can.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_can.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRC" Cversion="1.1.0" condition="STM32F2 STDPERIPH ">
+      <description>CRC calculation unit (CRC) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_CRC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_crc.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_crc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="CRYP" Cversion="1.1.0" condition="STM32F21x STDPERIPH RCC">
+      <description>Cryptographic processor (CRYP) driver for STM32F21x</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_CRYP
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_cryp.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_cryp.c"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_cryp_aes.c"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_cryp_des.c"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_cryp_tdes.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DAC" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Digital-to-analog converter (DAC) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_DAC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_dac.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_dac.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DBGMCU" Cversion="1.1.0" condition="STM32F2 STDPERIPH">
+      <description>MCU debug component (DBGMCU) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_DBGMCU
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_dbgmcu.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_dbgmcu.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DCMI" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Digital camera interface (DCMI) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_DCMI
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_dcmi.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_dcmi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="DMA" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>DMA controller (DMA) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_DMA
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_dma.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_dma.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="EXTI" Cversion="1.1.0" condition="STM32F2 STDPERIPH">
+      <description>External interrupt/event controller (EXTI) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_EXTI
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_exti.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_exti.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="Flash" Cversion="1.1.0" condition="STM32F2 STDPERIPH">
+      <description>Embedded Flash memory driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_FLASH
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_flash.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_flash.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="FSMC" Cversion="1.1.0" condition="STM32F21x STDPERIPH RCC">
+      <description>Flexible Static Memory Controller (FSMC) driver for STM32F21x</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_FSMC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_fsmc.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_fsmc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="GPIO" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>General-purpose I/O (GPIO) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_GPIO
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_gpio.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_gpio.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="HASH" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Hash processor (HASH) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_HASH
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_hash.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_hash.c"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_hash_md5.c"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_hash_sha1.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="I2C" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Inter-integrated circuit (I2C) interface driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_I2C
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_i2c.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_i2c.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="IWDG" Cversion="1.1.0" condition="STM32F2 STDPERIPH ">
+      <description>Independent watchdog (IWDG) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_IWDG
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_iwdg.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_iwdg.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="PWR" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Power controller (PWR) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_PWR
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_pwr.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_pwr.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RCC" Cversion="1.1.0" condition="STM32F2 STDPERIPH">
+      <description>Reset and clock control (RCC) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_RCC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_rcc.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_rcc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RNG" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Random number generator (RNG) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_RNG
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_rng.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_rng.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="RTC" Cversion="1.1.0" condition="STM32F2 STDPERIPH">
+      <description>Real-time clock (RTC) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_RTC
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_rtc.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_rtc.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SDIO" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Secure digital (SDIO) interface driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_SDIO
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_sdio.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_sdio.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SPI" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Serial peripheral interface (SPI) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_SPI
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_spi.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_spi.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="SYSCFG" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>System configuration controller (SYSCFG) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_SYSCFG
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_syscfg.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_syscfg.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="TIM" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Timers (TIM) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_TIM
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_tim.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_tim.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="USART" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Universal synchronous asynchronous receiver transmitter (USART) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_USART
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_usart.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_usart.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="StdPeriph Drivers" Csub="WWDG" Cversion="1.1.0" condition="STM32F2 STDPERIPH RCC">
+      <description>Window watchdog (WWDG) driver for STM32F2xx</description>
+      <RTE_Components_h>
+        #define RTE_DEVICE_STDPERIPH_WWDG
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="Device\StdPeriph_Driver\inc\stm32f2xx_wwdg.h"/>
+        <file category="source" name="Device\StdPeriph_Driver\src\stm32f2xx_wwdg.c"/>
+      </files>
+    </component>
+
+    <!-- END: STMicroelectronics Standard Peripherals Drivers -->
+
+    <component Cclass="Device" Cgroup="GPIO" Cversion="1.0.1" condition="STM32F2xx CMSIS Device">
+      <description>GPIO driver used by RTE Drivers for STM32F2 Series</description>
+      <files>
+        <file category="header" name="RTE_Driver\GPIO_STM32F2xx.h"/>
+        <file category="source" name="RTE_Driver\GPIO_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="DMA" Cversion="1.0.0" condition="STM32F2xx CMSIS Device">
+      <description>DMA driver used by RTE Drivers for STM32F2 Series</description>
+      <files>
+        <file category="header" name="RTE_Driver\DMA_STM32F2xx.h"/>
+        <file category="source" name="RTE_Driver\DMA_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="EXTI" Cversion="1.0.0" condition="STM32F2xx CMSIS Device">
+      <description>EXTI driver used by RTE Drivers for STM32F2 Series</description>
+      <files>
+        <file category="header" name="RTE_Driver\EXTI_STM32F2xx.h"/>
+        <file category="source" name="RTE_Driver\EXTI_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Device" Cgroup="FSMC" Cversion="1.0.0" condition="STM32F2xx CMSIS Device">
+      <description>FSMC driver used by RTE Drivers for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_DEVICE_FSMC                 /* Device FSMC */
+      </RTE_Components_h>
+      <files>
+        <file category="header" name="RTE_Driver\FSMC_STM32F2xx.h"/>
+        <file category="source" name="RTE_Driver\FSMC_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="SPI" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO DMA">
+      <description>SPI Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_SPI1                /* Driver SPI1 */
+        #define RTE_Drivers_SPI2                /* Driver SPI2 */
+        #define RTE_Drivers_SPI3                /* Driver SPI3 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\SPI_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="UART" Cversion="1.01.0" condition="STM32F2xx CMSIS RTOS GPIO DMA">
+      <description>UART Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_UART1               /* Driver UART1 */
+        #define RTE_Drivers_UART2               /* Driver UART2 */
+        #define RTE_Drivers_UART3               /* Driver UART3 */
+        #define RTE_Drivers_UART4               /* Driver UART4 */
+        #define RTE_Drivers_UART5               /* Driver UART5 */
+        #define RTE_Drivers_UART6               /* Driver UART6 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\UART_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="I2C" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO DMA">
+      <description>I2C Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_I2C1                /* Driver I2C1 */
+        #define RTE_Drivers_I2C2                /* Driver I2C2 */
+        #define RTE_Drivers_I2C3                /* Driver I2C3 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\I2C_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="MCI" Cversion="1.01.0" condition="STM32F2xx CMSIS RTOS GPIO DMA">
+      <description>MCI Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_MCI0                /* Driver MCI0 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\MCI_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="Ethernet MAC" Cversion="1.02.0" condition="STM32F2xx CMSIS RTOS GPIO">
+      <description>Ethernet MAC Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_ETH_MAC0            /* Driver ETH_MAC0 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\EMAC_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="USB Device" Csub="Full-speed" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO">
+      <description>USB Device Full-Speed Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_USBD0               /* Driver USBD0 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\OTG_FS_STM32F2xx.c"/>
+        <file category="source" name="RTE_Driver\USBD_FS_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="USB Device" Csub="High-speed" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO">
+      <description>USB Device High-Speed Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_USBD1               /* Driver USBD1 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\OTG_HS_STM32F2xx.c"/>
+        <file category="source" name="RTE_Driver\USBD_HS_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="USB Host" Csub="Full-speed" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO">
+      <description>USB Host Full-Speed Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_USBH0               /* Driver USBH0 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\OTG_FS_STM32F2xx.c"/>
+        <file category="source" name="RTE_Driver\USBH_FS_STM32F2xx.c"/>
+      </files>
+    </component>
+
+    <component Cclass="Drivers" Cgroup="USB Host" Csub="High-speed" Cversion="1.03.0" condition="STM32F2xx CMSIS RTOS GPIO">
+      <description>USB Host High-Speed Driver for STM32F2 Series</description>
+      <RTE_Components_h>  <!-- the following content goes into file 'RTE_Components.h' -->
+        #define RTE_Drivers_USBH1               /* Driver USBH1 */
+      </RTE_Components_h>
+      <files>
+        <file category="source" name="RTE_Driver\OTG_HS_STM32F2xx.c"/>
+        <file category="source" name="RTE_Driver\USBH_HS_STM32F2xx.c"/>
+      </files>
+    </component>
+    
+    <!-- MCBSTM32F200 Development Board -->
+    <bundle Cbundle="MCBSTM32F200" Cclass="Board Support" Cversion="1.0.0">
+      <description>Keil Development Board MCBSTM32F200</description>
+      <doc>Documents\mcbstm32f200.chm</doc>
+      <component Cgroup="MCBSTM32F200" Csub="LED" condition="STM32F2xx CMSIS GPIO">
+        <description>LED driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\LED.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\LED.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Keyboard" condition="STM32F2xx CMSIS GPIO">
+        <description>Keyboard driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Keyboard.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Keyboard.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="A/D Converter" condition="STM32F2xx CMSIS Device">
+        <description>A/D Converter driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\ADC.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\ADC.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Joystick" condition="STM32F2xx CMSIS RTOS I2C">
+        <description>Joystick driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Joystick.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Joystick_STMPE811.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Touchscreen" condition="STM32F2xx CMSIS RTOS I2C">
+        <description>Touchscreen driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Touch.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Touch_STMPE811.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Accelerometer" condition="STM32F2xx CMSIS RTOS I2C">
+        <description>Accelerometer driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Accel.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Accel_LIS3DH.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Gyroscope" condition="STM32F2xx CMSIS RTOS I2C">
+        <description>Gyroscope driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Gyroscope.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Gyroscope_L3G4200D.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Camera" condition="STM32F2xx CMSIS RTOS I2C">
+        <description>Camera driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Camera.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\Camera_OVM7690.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="Graphic LCD" condition="STM32F2xx CMSIS Device">
+        <description>Graphic LCD driver for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Font_6x8_h.h"/>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\Font_16x24_h.h"/>
+          <file category="header" name="Boards\Keil\MCBSTM32F200\Common\GLCD.h"/>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\GLCD_16bitIF_STM32F2xx.c"/>
+        </files>
+      </component>
+      <component Cgroup="MCBSTM32F200" Csub="emWin LCD" Cvariant="16-bit IF" condition="STM32F2xx CMSIS Device">
+        <description>emWin LCD driver (16-bit Interface) for Keil MCBSTM32F200 Development Board</description>
+        <files>
+          <file category="source" name="Boards\Keil\MCBSTM32F200\Common\LCD_X_16bitIF_STM32F2xx.c"/>
+        </files>
+      </component>
+    </bundle>
+  </components>
+</package>

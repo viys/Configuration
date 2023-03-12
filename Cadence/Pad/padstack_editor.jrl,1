@@ -1,0 +1,9 @@
+\t (00:00:00) padstack_editor 17.4 S032 Windows SPB 64-bit Edition
+\t (00:00:00)     Journal start - Tue Feb 21 18:53:49 2023
+\t (00:00:00)         Host=778B User=yugut Pid=5116 CPUs=12
+\t (00:00:00) CmdLine= d:\cadence\spb_17.4\tools\bin\padstack_editor.exe F:\OneDrive\IOT\MY\Cadence\Pad\smd_rec5_600x5_420mm.pad
+\t (00:00:00) 
+\t (00:00:11)     Journal end - Tue Feb 21 18:54:00 2023
+tChanged "Design Layers"
+\d (00:00:11) QtFillin No
+\t (00:00:11)     Journal end - Tue Feb 21 18:53:59 2023
